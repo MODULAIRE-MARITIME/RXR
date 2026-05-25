@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Drum Sampler – Mise à jour firmware</title>
+  <meta name="description" content="Page de mise à jour firmware pour Drum Sampler ESP32-S3 Plus.">
+  <style>
+    :root {
+      --bg: #f6f4ef;
+      --panel: #fffdf8;
+      --text: #1f1d19;
+      --muted: #6f6a61;
+      --line: #ddd7ce;
+      --accent: #0d6b6f;
+      --accent-hover: #0a5558;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    .wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+    }
+
+    h1 {
+      margin: 0 0 10px;
+      font-size: 32px;
+      line-height: 1.1;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .steps {
+      margin: 24px 0;
+      padding-left: 20px;
+      color: var(--text);
+    }
+
+    .steps li {
+      margin-bottom: 10px;
+    }
+
+    .install {
+      margin: 28px 0 22px;
+    }
+
+    .note {
+      font-size: 14px;
+      color: var(--muted);
+      border-top: 1px solid var(--line);
+      padding-top: 18px;
+      margin-top: 18px;
+    }
+
+    .warning {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      background: #f2ece3;
+      border: 1px solid #ddd2c2;
+      color: #4a4033;
+      font-size: 14px;
+    }
+
+    a {
+      color: var(--accent);
+    }
+
+    a:hover {
+      color: var(--accent-hover);
+    }
+  </style>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <h1>Mise à jour firmware</h1>
+      <p>Cette page permet d’installer ou mettre à jour le firmware de votre Drum Sampler basé sur ESP32-S3 Plus.</p>
+      <p>Utilisez <strong>Chrome</strong> ou <strong>Edge</strong> sur Mac ou PC, puis branchez le module en USB.</p>
+
+      <ol class="steps">
+        <li>Branchez le module en USB.</li>
+        <li>Si nécessaire, mettez-le en mode bootloader (maintenir BOOT puis appuyer sur RESET, puis relâcher BOOT).</li>
+        <li>Cliquez sur le bouton ci-dessous.</li>
+        <li>Sélectionnez le port USB correspondant au module.</li>
+        <li>Laissez l’installation se terminer sans débrancher le câble.</li>
+      </ol>
+
+      <div class="install">
+        <esp-web-install-button manifest="manifest.json"></esp-web-install-button>
+      </div>
+
+      <div class="warning">
+        Si rien ne se passe au clic, essayez un autre câble USB data ou relancez le module en mode bootloader.
+      </div>
+
+      <p class="note">
+        Cette page utilise ESP Web Tools, qui permet le flash firmware directement depuis le navigateur via Web Serial. [web:294][web:328]
+      </p>
+    </section>
+  </main>
+</body>
+</html>
